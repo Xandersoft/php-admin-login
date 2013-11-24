@@ -8,13 +8,13 @@ Implication
 
 To password protect a file add the following line to LINE 1 of the document, before anything else. Also make sure the file’s extension is allowed to be executed by PHP on your server.
 
-…
+```
 <?php include 'auth.php' ?>
-…
+```
 
 To create a login form, add the following PHP code at the very top of the page,
 
-…
+```
 <?php 
 
 include 'functions.php';
@@ -24,16 +24,16 @@ if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
 if ($action == "login") {logIn(); };
 
 ?>
-…
+```
 
 and use the following HTML code to create the login form.
 
-…
+```
 <?php loginErrorMessage(); ?>
 <form action="login.php?action=login" method="POST" accept-charset="UTF-8"/>
 <input type="password" name="password" placeholder="Enter your Password"/><br>
 <input type="submit" value="Submit"/>
-…
+```
 
 Lastly, use “login.php?action=logout” as the URL for any hyperlink that should log out the user.
 
