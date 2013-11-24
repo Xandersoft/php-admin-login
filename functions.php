@@ -18,8 +18,8 @@ if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
 
 function loginErrorMessage() {
 	$loginErrorReason = $_GET['failed'];
-	if ($loginErrorReason == 'denied') {echo 'Access Denied. Please enter your password.'; }; // Login Error Explanation if a user tries to access a password protected page when they aren't logged in.
-	if ($loginErrorReason == 'invalid') {echo 'The password you entered is incorrect.'; }; // Login Error Explanation if the user didn't enter the correct password.
+	if ($loginErrorReason == 'denied') {echo 'Access is denied or your session has expired. Please enter your password.'; }; // Login Error Explanation if a user tries to access a password protected page when they aren't logged in.
+	if ($loginErrorReason == 'invalid') {echo 'The password you entered is incorrect. Please try again.'; }; // Login Error Explanation if the user didn't enter the correct password.
 };
 
 function loginFailed($reason) {
