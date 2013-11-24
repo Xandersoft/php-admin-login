@@ -1,7 +1,7 @@
 php-admin-login
 =============
 
-php-admin-login is a series of PHP files that can be used to easily password protect text files on a PHP compatible server. This script uses PHP md5() encryption, which is enough to protect moderately confidential information. However, this script IS NOT meant to handle extremely confidential information such as Bank account or Social Security numbers. The plain-text password (which by default is “Facepunch”) is kept on line 3 of functions.php (functions.php:3) by default for easy setup, but can be deleted in alternative for a MD5 hash being stored as a variable on functions.php:4. The plain-text or hashed password can only be seen by someone accessing the server via FTP. The plain-text or hashed password could be stored on a MySQL database with the proper script modifications.
+php-admin-login is a series of 4 PHP files that can be used to easily password protect text files on a PHP compatible server. This script uses PHP md5() encryption, which is enough to protect moderately confidential information. However, this script IS NOT meant to handle extremely confidential information such as Bank account or Social Security numbers. The plain-text password (which by default is “Facepunch”) is kept on line 3 of functions.php (functions.php:3) by default for easy setup, but can be deleted in alternative for a MD5 hash being stored as a variable on functions.php:4. The plain-text or hashed password can only be seen by someone accessing the server via FTP. The plain-text or hashed password could be stored on a MySQL database with the proper script modifications.
 
 Implication
 ------------
@@ -12,21 +12,8 @@ To password protect a file add the following line to LINE 1 of the document, bef
 <?php include 'auth.php' ?>
 ```
 
-To create a login form, add the following PHP code at the very top of the page,
-
-```
-<?php 
-
-include 'functions.php';
-$action = $_GET['action'];
-if ($action == "logout") {logOut(); };
-if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
-if ($action == "login") {logIn(); };
-
-?>
-```
-
-and use the following HTML code to create the login form.
+To create a login form, use the following HTML code to create the login form.
+NOTE: If the name of your login form is not "login.php", you must chance that in the HTML code.
 
 ```
 <?php loginErrorMessage(); ?>
@@ -35,7 +22,7 @@ and use the following HTML code to create the login form.
 <input type="submit" value="Submit"/>
 ```
 
-Lastly, use “login.php?action=logout” as the URL for any hyperlink that should log out the user.
+Lastly, use “login.php?action=logout” as the URL for any hyperlink that should log out the user. Again, if the name of your login form is not "login.php", you must chance that in this code as well.
 
 Notes
 -----
