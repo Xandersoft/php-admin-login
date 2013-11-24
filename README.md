@@ -16,7 +16,7 @@ To create a login form, use the following HTML code to create the login form.
 NOTE: If the name of your login form is not "login.php", you must chance that in the HTML code.
 
 ```
-<?php loginErrorMessage(); ?>
+<?php include 'functions.php'; loginErrorMessage(); ?>
 <form action="login.php?action=login" method="POST" accept-charset="UTF-8"/>
 <input type="password" name="password" placeholder="Enter your Password"/><br>
 <input type="submit" value="Submit"/>
