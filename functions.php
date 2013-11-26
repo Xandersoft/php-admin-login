@@ -2,8 +2,10 @@
 
 $loginPassword = 'Facepunch'; // This is the plain-text password, change this to whatever you want to use as a password.
 $md5LoginPassword = md5($loginPassword); // If you want to store your password in MD5 form only, delete the above line and replace "md5($loginPassword)" with your MD5 hash.
+$phpSessionName = 'php-admin-login'; // Name of the PHP Session used to store the MD5 hashed password. You can change this to avoid interference with other websites that may use this same login code.
+
 $loginPasswordPOST = $_POST["password"];
-session_start(); $md5LoginPasswordSession = $_SESSION['php-admin-login'];
+session_start(); $md5LoginPasswordSession = $_SESSION[$phpSessionName];
 
 function logIn() {
 global $loginPassword;
@@ -11,7 +13,7 @@ global $md5LoginPassword;
 global $loginPasswordPOST;
 global $md5LoginPasswordSession;
 $md5LoginPasswordPOST = md5($loginPasswordPOST);
-if ($md5LoginPasswordPOST == $md5LoginPassword) {session_start(); $_SESSION['php-admin-login']="$md5LoginPasswordPOST"; loginSuccess(); };
+if ($md5LoginPasswordPOST == $md5LoginPassword) {session_start(); $_SESSION[$phpSessionName]=$md5LoginPasswordPOST; loginSuccess(); };
 if ($md5LoginPasswordSession !== $md5LoginPassword) {loginFailed("invalid"); };
 if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
 };
@@ -36,7 +38,7 @@ function loginSuccess() {
 	
 function logOut() {
 	session_start();
-	unset($_SESSION['php-admin-login']);
+	unset($_SESSION[$phpSessionName]);
 	session_destroy();
 	header("HTTP/1.1 301 Moved Permanently"); 
 	header("Location: login.php"); // Where the user is redirected to when they log out.
