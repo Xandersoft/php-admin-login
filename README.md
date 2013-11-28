@@ -27,6 +27,6 @@ Lastly, use “login.php?action=logout” as the URL for any hyperlink that shou
 Notes
 -----
 
-- If a user who is not logged in tries to access a password protected file, they are redirected to the address specified by functions.php:29 with the GET variable “action” set as “denied”. Someone who enters a password wrong is redirected to the address specified by functions.php:29 with the GET variable “action” set as “invalid”.
+- If a user who is not logged in tries to access a password protected file, they are redirected to the address specified by functions.php:30 with the GET variable “action” set as “denied”. Someone who enters a password wrong is redirected to the address specified by functions.php:30 with the GET variable “action” set as “invalid”.
 - The user is kept logged in by storing the correct md5 hash using a PHP Session (which by default is “php-admin-login”). The user is logged out by clearing the variable and destroying the Session. The Session name can be changed by editing functions.php:5 to avoid interference with other websites that may use this same login code. The transaction can be further secured by the use of HTTPS.
 - These files are all written to be in the same directory on a server. Any password protected files need to be in the same directory as these files, as well.
