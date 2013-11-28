@@ -12,6 +12,7 @@ global $loginPassword;
 global $md5LoginPassword;
 global $loginPasswordPOST;
 global $md5LoginPasswordSession;
+global $phpSessionName;
 $md5LoginPasswordPOST = md5($loginPasswordPOST);
 if ($md5LoginPasswordPOST == $md5LoginPassword) {session_start(); $_SESSION[$phpSessionName]=$md5LoginPasswordPOST; loginSuccess(); };
 if ($md5LoginPasswordSession !== $md5LoginPassword) {loginFailed("invalid"); };
@@ -37,6 +38,7 @@ function loginSuccess() {
 };
 	
 function logOut() {
+	global $phpSessionName;
 	session_start();
 	unset($_SESSION[$phpSessionName]);
 	session_destroy();
