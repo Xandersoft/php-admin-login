@@ -1,5 +1,20 @@
 <?php
 
+// This file is part of php-admin-login.
+
+// php-admin-login is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// any later version.
+
+// php-admin-login is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with php-admin-login.  If not, see <http://www.gnu.org/licenses/>.
+
 $loginPassword = 'Facepunch'; // This is the plain-text password, change this to whatever you want to use as a password.
 $md5LoginPassword = md5($loginPassword); // If you want to store your password in MD5 form only, delete the above line and replace "md5($loginPassword)" with your MD5 hash.
 $phpSessionName = 'php-admin-login'; // Name of the PHP Session used to store the MD5 hashed password. You can change this to avoid interference with other websites that may use this same login code.
