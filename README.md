@@ -13,7 +13,7 @@ To password protect a file add the following line to LINE 1 of the document, bef
 ```
 
 To create a login form, use the following HTML code to create the login form.
-NOTE: If the name of your login form is not "login.php", you must chance that in the HTML code.
+NOTE: If the name of your login form is not "login.php", you must change that in the HTML code.
 
 ```
 <?php include 'functions.php'; loginErrorMessage(); ?>
@@ -22,7 +22,7 @@ NOTE: If the name of your login form is not "login.php", you must chance that in
 <input type="submit" value="Submit"/>
 ```
 
-Lastly, use “login.php?action=logout” as the URL for any hyperlink that should log out the user. Again, if the name of your login form is not "login.php", you must chance that in this code as well.
+Lastly, use “login.php?action=logout” as the URL for any hyperlink that should log out the user. Again, if the name of your login form is not "login.php", you must change that in this code as well.
 
 Notes
 -----
