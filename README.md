@@ -1,7 +1,7 @@
 php-admin-login (v1.0)
 =============
 
-php-admin-login is a series of 4 PHP files that can be used to easily password protect text files on a PHP compatible server. This script uses PHP md5() encryption, which is enough to protect moderately confidential information. However, this script IS NOT meant to handle extremely confidential information such as Bank account or Social Security numbers. The plain-text password (which by default is “Facepunch”) is kept on line 20 of functions.php (functions.php:20) by default for easy setup, but can be deleted in alternative for a md5 hash being stored as a variable on functions.php:21. The plain-text or hashed password can only be seen by someone accessing the server via FTP. The plain-text or hashed password could be stored on a MySQL database with the proper script modifications.
+php-admin-login is a series of 3 PHP files (auth.php, functions.php, and login.php; admin.php is just an example of a password protected page and isn't critical) that can be used to easily password protect text files on a PHP compatible server. This script uses PHP md5() encryption, which is enough to protect moderately confidential information. However, this script IS NOT meant to handle extremely confidential information such as Bank account or Social Security numbers. The plain-text password (which by default is “Facepunch”) is kept on line 20 of functions.php (functions.php:20) by default for easy setup, but can be deleted in alternative for a md5 hash being stored as a variable on functions.php:21. The plain-text or hashed password can only be seen by someone accessing the server via FTP. The plain-text or hashed password could be stored on a MySQL database with the proper script modifications.
 
 Implication
 ------------
