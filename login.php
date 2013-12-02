@@ -25,6 +25,8 @@ if ($action == "login") {logIn(); };
 
 ?>
 
+<!-- Any code past this point is to display a HTML login form, and isn't necessary for php-admin-login to operate, and therefor can be deleted. -->
+
 <html>
 <head>
 <title>Log In | php-admin-login</title>
