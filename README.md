@@ -6,7 +6,7 @@ php-admin-login is a series of 3 PHP files (auth.php, functions.php, and login.p
 Implication
 ------------
 
-To password protect a file add the following line to LINE 1 of the document, before anything else. Also make sure the file’s extension is allowed to be executed by PHP on your server.
+To password protect a file, add the following line to LINE 1 of the document, before anything else. Also make sure the file’s extension is allowed to be executed by PHP on your server.
 
 ```
 <?php include 'auth.php' ?>
