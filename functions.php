@@ -1,6 +1,6 @@
 <?php
 
-// Copyright 2013 yAzZiE Labs
+// Copyright 2014 yAzZiE Labs
 //
 // This file is part of php-admin-login.
 //
@@ -15,7 +15,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with php-admin-login.  If not, see <http://www.gnu.org/licenses/>.
+// along with php-admin-login. If not, see <http://www.gnu.org/licenses/>.
 
 $loginPassword = 'Facepunch'; // This is the plain-text password, change this to whatever you want to use as a password.
 $md5LoginPassword = md5($loginPassword); // If you want to store your password in MD5 form only, delete the above line and replace "md5($loginPassword)" with your MD5 hash.
@@ -31,15 +31,15 @@ global $loginPasswordPOST;
 global $md5LoginPasswordSession;
 global $phpSessionName;
 $md5LoginPasswordPOST = md5($loginPasswordPOST);
-if ($md5LoginPasswordPOST == $md5LoginPassword) {session_start(); $_SESSION[$phpSessionName]=$md5LoginPasswordPOST; loginSuccess(); };
+if ($md5LoginPasswordPOST === $md5LoginPassword) {session_start(); $_SESSION[$phpSessionName]=$md5LoginPasswordPOST; loginSuccess(); };
 if ($md5LoginPasswordSession !== $md5LoginPassword) {loginFailed("invalid"); };
-if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
+if ($md5LoginPasswordSession === $md5LoginPassword) {loginSuccess(); };
 };
 
 function loginErrorMessage() {
 	$loginErrorReason = $_GET['failed'];
-	if ($loginErrorReason == 'denied') {echo 'Access is denied or your session has expired. Please enter your password.'; }; // Login Error Explanation if a user tries to access a password protected page when they aren't logged in.
-	if ($loginErrorReason == 'invalid') {echo 'The password you entered is incorrect. Please try again.'; }; // Login Error Explanation if the user didn't enter the correct password.
+	if ($loginErrorReason === 'denied') {echo 'Access is denied or your session has expired. Please enter your password.'; }; // Login Error Explanation if a user tries to access a password protected page when they aren't logged in.
+	if ($loginErrorReason === 'invalid') {echo 'The password you entered is incorrect. Please try again.'; }; // Login Error Explanation if the user didn't enter the correct password.
 };
 
 function loginFailed($reason) {

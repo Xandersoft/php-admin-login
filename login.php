@@ -1,6 +1,6 @@
 <?php
 
-// Copyright 2013 yAzZiE Labs
+// Copyright 2014 yAzZiE Labs
 //
 // This file is part of php-admin-login.
 //
@@ -15,13 +15,13 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with php-admin-login.  If not, see <http://www.gnu.org/licenses/>.
+// along with php-admin-login. If not, see <http://www.gnu.org/licenses/>.
 
 include 'functions.php';
 $action = $_GET['action'];
-if ($action == "logout") {logOut(); };
-if ($md5LoginPasswordSession == $md5LoginPassword) {loginSuccess(); };
-if ($action == "login") {logIn(); };
+if ($action === "logout") {logOut(); };
+if ($md5LoginPasswordSession === $md5LoginPassword) {loginSuccess(); };
+if ($action === "login") {logIn(); };
 
 ?>
 
