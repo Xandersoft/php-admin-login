@@ -31,6 +31,6 @@ Notes
 - The user is kept logged in by storing the correct md5 hash using a PHP Session (which by default is “php-admin-login”). The user is logged out by clearing the variable and destroying the Session. The Session name can be changed by editing functions.php:22 to avoid interference with other websites that may use this same login code. The transaction can be further secured by the use of HTTPS.
 - These files are all written to be in the same directory on a server. Any password protected files need to be in the same directory as these files, as well.
 
-Update Log:
+Update Log
 -----------
 - v1.1: Updated copyright year and replaced "==" operators with "==="
