@@ -50,7 +50,7 @@ function loginFailed($reason) {
 	
 function loginSuccess() {
 	header("HTTP/1.1 301 Moved Permanently"); 
-	header("Location: admin.php"); // Where the user is redirected to when they log in.
+	header("Location: demo.php"); // Where the user is redirected to when they log in.
 	exit;
 };
 	
